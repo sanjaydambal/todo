@@ -2,13 +2,16 @@ import React from 'react'
 import TodoItem from './TodoItem'
 
 
-export class TodoList extends React.Component {z
+export class TodoList extends React.Component {
   render() {
     return (
       <ul>
         {
-            this.props.todos.map( obj => (
-                <TodoItem key={obj.id} todo={obj} handleChangeProps = {this.props.handleChangeProps} />
+            this.props.todos.map( todo=> (
+                <TodoItem key={todo.id}
+                 todo={todo}
+                  handleChangeProps = {this.props.handleChangeProps} deleteTodoProps={this.props.deleteTodoProps}
+                    />
             ))
         }
       </ul>
